@@ -1,0 +1,33 @@
+### Add a recipe
+PUT localhost:8081/recipes
+Content-Type: application/json
+
+{
+    "name": "French Toasts",
+    "calories": 750,
+    "type": "1bfdba39-6655-4ce6-a98a-215287713c8c"
+}
+
+### Update a recipe by ID
+PUT localhost:8080/recipes/7351b59e-08f3-4e5d-a703-22bd5c4affd1
+Content-Type: application/json
+
+{
+  "name": "French Toasts",
+  "calories": 800,
+  "type": "a44f5a65-1d47-41d0-9dbd-176c1696956c"
+}
+
+### Try adding a recipe with a non-existent type
+PUT localhost:8080/recipes
+Content-Type: application/json
+
+{
+  "name": "French Toasts",
+  "calories": 800,
+  "type": "7351b59e-08f3-4e5d-a703-22bd5c4affd1"
+}
+
+### Modify a recipe type
+PUT localhost:8080/recipeTypes/3d86dd98-5859-4250-a5c6-a6e830f3094e
+Content-Type: application/json

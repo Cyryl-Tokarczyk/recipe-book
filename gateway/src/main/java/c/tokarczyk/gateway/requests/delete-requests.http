@@ -1,0 +1,5 @@
+### Delete a recipe
+DELETE localhost:8080/recipes/b91c547c-782e-4cc7-a7a2-4d56e937b116
+
+### Delete a recipe type
+DELETE localhost:8080/recipeTypes/fa9e427e-4698-443c-b8b6-517b1fd4caef

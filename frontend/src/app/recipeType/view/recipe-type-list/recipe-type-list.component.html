@@ -1,0 +1,33 @@
+<article class="text--justified">
+  <header><h2>Recipe types</h2></header>
+
+  <table *ngIf="recipeTypes">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>View</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let recipeType of recipeTypes.list">
+      <td>{{ recipeType.second | json }}</td>
+      <td>
+       <a [routerLink]="['/recipeType', recipeType.first]" >View</a>
+      </td>
+      <td>
+        <a [routerLink]="['/recipeType', recipeType.first, 'edit']">Edit</a>
+      </td>
+      <td>
+        <button (click)="onDelete(recipeType)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div>
+  <a [routerLink]="['/addRecipeType']">Add new recipe type</a>
+  </div>
+
+</article>

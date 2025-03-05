@@ -1,0 +1,14 @@
+### Get all recipes
+GET localhost:8081/recipes
+
+### Get a recipe by ID
+GET localhost:8080/recipes/f335c983-9fdb-4ed3-a46c-c22f6784e79a
+
+### Get recipes of a given type
+GET localhost:8080/recipes/type/a44f5a65-1d47-41d0-9dbd-176c1696956c
+
+### Get all recipe types
+GET localhost:8081/recipeTypes
+
+### Get recipe type by ID
+GET localhost:8080/recipeTypes/a44f5a65-1d47-41d0-9dbd-176c1696956c

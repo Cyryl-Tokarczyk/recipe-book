@@ -1,0 +1,24 @@
+<article  *ngIf="recipeType">
+    <header><h2>Add recipe type</h2></header>
+  
+    <form class="container"  #formEdit="ngForm" (ngSubmit)="onSubmitAdd()">
+      <div class="row">
+        <div>
+          <div>
+            <label for="name">Name:</label>
+            <input id="name" name="name" [(ngModel)]="recipeType.name"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <button type="submit">Add</button>
+        </div>
+        <div>
+          <button type="button" (click)="formEdit.resetForm()">Reset</button>
+        </div>
+      </div>
+    </form>
+  </article>
+  

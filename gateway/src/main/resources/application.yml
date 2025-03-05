@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: recipes
+          uri: ${RECIPES_URL}
+          predicates:
+          - Path=/recipes,/recipes/**
+        - id: recipe_types
+          uri: ${RECIPE_TYPES_URL}
+          predicates:
+          - Path=/recipeTypes,/recipeTypes/**

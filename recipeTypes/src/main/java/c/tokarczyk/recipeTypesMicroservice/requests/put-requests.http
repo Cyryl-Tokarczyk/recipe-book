@@ -1,0 +1,15 @@
+### Add a recipe type
+PUT localhost:8080/recipeTypes
+Content-Type: application/json
+
+{
+  "name": "Lunch"
+}
+
+### Modify a recipe type
+PUT localhost:8080/recipeTypes/3d86dd98-5859-4250-a5c6-a6e830f3094e
+Content-Type: application/json
+
+{
+  "name": "Brunch"
+}

@@ -1,0 +1,24 @@
+services:
+  recipes-frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    environment:
+      - API_URL=http://recipes-gateway:8080
+    restart: always
+  recipes-gateway:
+    build: ./gateway
+    environment:
+      - RECIPES_URL=http://recipes-recipes:8080
+      - RECIPE_TYPES_URL=http://recipes-recipe-types:8080
+      - GATEWAY_HOST=http://recipes-gateway:8080
+  recipes-recipes:
+    build: ./recipes
+    environment:
+      - RECIPE_TYPES_URL=http://recipes-recipe-types:8080
+  recipes-recipe-types:
+    build: ./recipeTypes
+    environment:
+      - RECIPES_URL=http://recipes-recipes:8080
+    depends_on:
+      - recipes-recipes

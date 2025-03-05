@@ -1,0 +1,5 @@
+### Get all recipe types
+GET localhost:8080/recipeTypes
+
+### Get recipe type by ID
+GET localhost:8080/recipeTypes/02ca7887-abaa-4b5c-a132-50b283e77c35
