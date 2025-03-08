@@ -1,4 +1,4 @@
-# Repo for the frontend of our engineering thesis
+# Repo for the recipe book web app
 
 ## Description
 
