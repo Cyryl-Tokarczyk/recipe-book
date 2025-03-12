@@ -24,7 +24,4 @@ services:
       - RECIPES_URL=http://recipes-recipes:8080
     depends_on:
       - recipes-recipes
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/recipeTypes"]
-      interval: 10s
-      retries: 5
+    restart: on-failure:2

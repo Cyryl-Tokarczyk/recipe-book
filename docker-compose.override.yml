@@ -9,7 +9,7 @@ services:
       - API_URL=http://recipes-gateway:8080
     volumes:
       - ./frontend:/app/frontend
-      - /app/frontend/node_modules
+      - frontend-node-modules:/app/frontend/node_modules
     command: npm start -- --host 0.0.0.0 --poll 1000
     restart: always
   recipes-gateway:
@@ -28,10 +28,7 @@ services:
       - RECIPES_URL=http://recipes-recipes:8080
     depends_on:
       - recipes-recipes
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://recipes-recipes:8080/recipes"]
-      interval: 10s
-      retries: 5
+    restart: on-failure:2
 
 volumes:
-  frontend: {}
+  frontend-node-modules: {}

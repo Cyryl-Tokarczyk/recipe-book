@@ -33,7 +33,7 @@ Frontend at: [http://localhost:8080/](http://localhost:8080/)
 Keep in mind that you should the containers and images before switching modes. <br>
 For example with:
 ```
-docker-compose down --rmi all
+docker-compose down --rmi all -v
 ```
 
 ## Credits
