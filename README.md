@@ -16,6 +16,8 @@ docker-compose up
 ```
 
 Frontend at: [http://localhost:4200/](http://localhost:4200/)
+<br>
+TODO: make the angular-api routing work 
 
 ### For prod mode
 
