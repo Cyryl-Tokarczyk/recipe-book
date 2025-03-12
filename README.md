@@ -8,9 +8,30 @@ A web application for creating and managing a recipe book. The frontend is built
 
 ## Running the project
 
+### For dev mode
+
 Simply run
 ```
 docker-compose up
+```
+
+Frontend at: [http://localhost:4200/](http://localhost:4200/)
+
+### For prod mode
+
+Run
+```
+docker-compose -f docker-compose.yml up
+```
+
+Frontend at: [http://localhost:8080/](http://localhost:8080/)
+
+### Note
+
+Keep in mind that you should the containers and images before switching modes. <br>
+For example with:
+```
+docker-compose down --rmi all
 ```
 
 ## Credits
