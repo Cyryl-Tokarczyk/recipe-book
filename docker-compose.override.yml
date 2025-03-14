@@ -2,11 +2,15 @@ services:
   recipes-frontend:
     build:
       context: ./frontend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     ports:
-      - "8080:80"
+      - "4200:4200"
     environment:
       - API_URL=http://recipes-gateway:8080
+    volumes:
+      - ./frontend:/app/frontend
+      - frontend-node-modules:/app/frontend/node_modules
+    command: npm start -- --host 0.0.0.0 --poll 1000
     restart: always
   recipes-gateway:
     build: ./gateway
@@ -25,3 +29,6 @@ services:
     depends_on:
       - recipes-recipes
     restart: on-failure:2
+
+volumes:
+  frontend-node-modules: {}
